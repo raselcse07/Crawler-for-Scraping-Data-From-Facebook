@@ -1,6 +1,6 @@
 # This is a Simple Crawler to grab data from facebook using Facebook Graph API
 # Name : Rasel Miah
-# Email : rasel_cse07@yahoo.com 
+# Email : rasel_cse07@yahoo.com
 
 import facebook
 
@@ -332,7 +332,7 @@ def FacebookData(token):
                         fp.write("Name : %s \n" % (comments_from["name"]))
                         fp.write("Comments Contents : %s\n" %(comments_data["message"]))
 
-                    # Comments Replay
+                    # Comments reply
 
                     try:
 
@@ -340,20 +340,20 @@ def FacebookData(token):
 
                         with open(file_name,"a") as fp:
 
-                            fp.write("\n***** Replay ****\n\n")
+                            fp.write("\n***** reply ****\n\n")
 
                         for i in range(len(reply_data)):
 
                             reply_dict=reply_data[i]
                             created_time=reply_dict["created_time"]
-                            from_replay=reply_dict["from"]["name"]
-                            replay_mgs=reply_dict["message"]
+                            from_reply=reply_dict["from"]["name"]
+                            reply_mgs=reply_dict["message"]
 
                             with open(file_name,"a") as fp:
 
                                 fp.write("Created Time : {}\n".format(created_time))
-                                fp.write("Name : {}\n".format(from_replay))
-                                fp.write("Reply : {}\n".format(replay_mgs))
+                                fp.write("Name : {}\n".format(from_reply))
+                                fp.write("Reply : {}\n".format(reply_mgs))
 
 
                     except KeyError:
