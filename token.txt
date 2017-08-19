@@ -1,0 +1,8 @@
+Put your token in this file.If you have multiple token,then put them separately(One line for one token)
+
+Example:
+
+token1
+token2
+token3
+token4
